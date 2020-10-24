@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="vItemParent" type="id" />
+    <item name="imgPoster" type="id" />
+    <item name="txtTitle" type="id" />
+    <item name="img_poster" type="id" />
+    <item name="txt_title" type="id" />
+    <item name="txt_state_connect" type="id" />
+    <item name="btn_retry" type="id" />
+    <item name="txt_title_and_year" type="id" />
+    <item name="txt_runtime" type="id" />
+    <item name="txt_released" type="id" />
+    <item name="rc_genre" type="id" />
+    <item name="txt_plot" type="id" />
+    <item name="v_item_parent" type="id" />
+    <item name="v_detail_parent" type="id" />
+    <item name="prg_movie_detail" type="id" />
+    <item name="txt_genre" type="id" />
+    <item name="txt_rating" type="id" />
+    <item name="txt_votes" type="id" />
+    <item name="txt_metascore" type="id" />
+    <item name="txt_director" type="id" />
+    <item name="txt_writer" type="id" />
+    <item name="txt_actors" type="id" />
+    <item name="txt_box_office" type="id" />
+    <item name="txt_website" type="id" />
+    <item name="txt_country" type="id" />
+    <item name="txt_language" type="id" />
+    <item name="txt_production" type="id" />
+    <item name="txt_awards" type="id" />
+    <item name="txt_rated" type="id" />
+    <item name="rc_rating" type="id" />
+    <item name="txt_rating_value" type="id" />
+    <item name="txt_rating_title" type="id" />
+</resources>

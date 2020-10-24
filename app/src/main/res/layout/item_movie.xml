@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.balysv.materialripple.MaterialRippleLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lyt_parent"
+    style="@style/RippleStyleDark"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@id/vItemParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_4"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@id/imgPoster"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:adjustViewBounds="true"
+            android:background="@drawable/corneal_shape"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="start"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/overlay_light_90"
+            android:textSize="@dimen/normal_font"
+            tools:text="People Name" />
+
+    </LinearLayout>
+
+</com.balysv.materialripple.MaterialRippleLayout>
+

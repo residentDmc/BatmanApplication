@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    android:id="@id/txt_genre"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/corneal_shape_genre"
+    android:padding="@dimen/margin_8"
+    android:layout_margin="@dimen/margin_4"
+    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+    android:textColor="@color/overlay_light_90"
+    tools:text="@string/sample_genre" />
