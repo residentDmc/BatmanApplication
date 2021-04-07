@@ -1,4 +1,4 @@
-package com.akaf.batmanapplication.data.repository
+package com.akaf.batmanapplication.data.repository.api
 
 import com.akaf.batmanapplication.data.api.ApiHelper
 

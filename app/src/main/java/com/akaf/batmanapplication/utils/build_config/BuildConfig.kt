@@ -1,9 +1,8 @@
-package com.akaf.batmanapplication.utils
+package com.akaf.batmanapplication.utils.build_config
 
 
 class BuildConfig {
-    companion object{
-
+    companion object {
         const val BASE_URL = "http://www.omdbapi.com/"
 
         // param
@@ -26,6 +25,6 @@ class BuildConfig {
 
 
         // database
-        const val MOVIE = "movie_database"
+        const val MOVIE_DATABASE = "movie_database"
     }
 }

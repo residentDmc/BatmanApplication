@@ -5,33 +5,45 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.akaf.batmanapplication.data.model.movielist.MovieList
-import com.akaf.batmanapplication.data.repository.MovieListRepository
-import com.akaf.kotlinkoin.utils.NetworkHelper
-import com.akaf.kotlinkoin.utils.Resource
+import com.akaf.batmanapplication.data.repository.api.MovieListApiRepository
+import com.akaf.batmanapplication.data.repository.db.MovieListDbRepository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MovieListViewModel(
-    private val movieListRepository: MovieListRepository,
-    private val networkHelper: NetworkHelper,
+    private val movieListApiRepository: MovieListApiRepository,
+    private val movieListDbRepository: MovieListDbRepository
 ) : ViewModel() {
 
-    private val movieListMutableLiveData = MutableLiveData<Resource<MovieList>>()
 
-    fun fetchMovieList(key: String, imdb_id: String):LiveData<Resource<MovieList>> {
+    fun fetchMovieList(key: String, imdb_id: String):LiveData<Any> {
+        val liveData = MutableLiveData<Any>()
         viewModelScope.launch {
-            movieListMutableLiveData.postValue(Resource.loading(null))
-            if (networkHelper.isNetworkConnected()) {
-                movieListRepository.getMovieList(key, imdb_id).let {
-                    if (it.isSuccessful) movieListMutableLiveData.postValue(Resource.success(it.body()))
-                }
-            } else movieListMutableLiveData.postValue(
-                Resource.error(
-                    "No internet connection",
-                    null
-                )
-            )
+            val allMovie=movieListDbRepository.getAllMovie()
+            when {
+                allMovie.isEmpty() -> initRequestMovie(key,imdb_id,liveData)
+                else -> liveData.postValue(allMovie)
+            }
         }
-        return movieListMutableLiveData
+        return liveData
+    }
+
+    private suspend fun initRequestMovie(
+        key: String,
+        imdb_id: String,
+        liveData: MutableLiveData<Any>
+    ) {
+        withContext(Dispatchers.IO) {
+            movieListApiRepository.getMovieList(key, imdb_id) }.let{
+            when (it) {
+                is MovieList -> {
+                    movieListDbRepository.insertMovie(it.movies)
+                    liveData.postValue(it.movies)
+                }
+                else -> liveData.postValue(it)
+            }
+        }
     }
 
 }

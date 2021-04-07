@@ -6,9 +6,17 @@ import retrofit2.Response
 
 class ApiHelperImpl(private val apiService: ApiService) : ApiHelper {
 
-    override suspend fun getMovieList(key: String, imdb_id: String): Response<MovieList> =
-        apiService.getMovieList(key, imdb_id)
+    override suspend fun getMovieList(key: String, imdb_id: String) =
+            try {
+                apiService.getMovieList(key, imdb_id)
+            } catch (e: Exception) {
+                e
+            }
 
-    override suspend fun getMovieDetail(key: String, movieDetail: String): Response<MovieDetail> =
-        apiService.getMovieDetail(key,movieDetail)
+    override suspend fun getMovieDetail(key: String, movieDetail: String) =
+            try {
+                apiService.getMovieDetail(key, movieDetail)
+            } catch (e: Exception) {
+                e
+            }
 }

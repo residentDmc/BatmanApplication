@@ -1,19 +1,20 @@
-package com.akaf.batmanapplication
+package com.akaf.batmanapplication.utils.application
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import androidx.multidex.MultiDex
 import androidx.multidex.MultiDexApplication
-import com.akaf.batmanapplication.di.appModule
-import com.akaf.batmanapplication.di.repoModule
-import com.akaf.batmanapplication.di.viewModelModule
+import com.akaf.batmanapplication.di.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
 class App : MultiDexApplication() {
 
     companion object {
+        @SuppressLint("StaticFieldLeak")
         lateinit var context: Context
+        @SuppressLint("StaticFieldLeak")
         lateinit var activity: Activity
     }
 
@@ -23,7 +24,15 @@ class App : MultiDexApplication() {
         context = applicationContext
         startKoin {
             androidContext(this@App)
-            modules(listOf(appModule, repoModule, viewModelModule))
+            val modules = modules(
+                listOf(
+                    appModule,
+                    repoModule,
+                    viewModelModule,
+                    databaseModule,
+                    adapterModule
+                )
+            )
         }
     }
 }

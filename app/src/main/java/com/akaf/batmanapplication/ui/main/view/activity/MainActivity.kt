@@ -1,8 +1,8 @@
-package com.akaf.batmanapplication.ui.main.view
+package com.akaf.batmanapplication.ui.main.view.activity
 
 import android.os.Bundle
 import com.akaf.batmanapplication.R
-import com.akaf.batmanapplication.utils.BaseActivity
+import com.vesam.quiz.utils.base.BaseActivity
 
 class MainActivity : BaseActivity() {
 

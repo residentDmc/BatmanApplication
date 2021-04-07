@@ -1,10 +1,11 @@
-package com.akaf.kotlinkoin.utils
+package com.akaf.batmanapplication.utils.network_helper
 
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 
+@Suppress("DEPRECATION")
 class NetworkHelper constructor(private val context: Context) {
 
     fun isNetworkConnected(): Boolean {
@@ -30,11 +31,11 @@ class NetworkHelper constructor(private val context: Context) {
                         ConnectivityManager.TYPE_ETHERNET -> true
                         else -> false
                     }
-
                 }
             }
         }
 
         return result
     }
+
 }

@@ -1,20 +1,9 @@
-package com.akaf.batmanapplication.utils;
+package com.akaf.batmanapplication.utils.tools;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SplitterTools {
-
-    private static SplitterTools splitter_tools_instance = null;
-
-    // static method to create instance of Singleton class
-    public static SplitterTools getInstance()
-    {
-        if (splitter_tools_instance == null)
-            splitter_tools_instance = new SplitterTools();
-
-        return splitter_tools_instance;
-    }
 
     public List<String> splitterStringList(String messageText) {
         List<String> splitterList = new ArrayList<>();

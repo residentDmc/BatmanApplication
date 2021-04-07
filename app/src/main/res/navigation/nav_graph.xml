@@ -7,29 +7,17 @@
 
     <fragment
         android:id="@+id/movieListFragment"
-        android:name="com.akaf.batmanapplication.MovieListFragment"
+        android:name="com.akaf.batmanapplication.ui.main.view.fragment.MovieListFragment"
         android:label="fragment_movie_list"
         tools:layout="@layout/fragment_movie_list" >
 
         <action
             android:id="@+id/action_movieListFragment_to_detailMovieFragment"
             app:destination="@id/detailMovieFragment" />
-        <action
-            android:id="@+id/action_movieListFragment_to_errorFragment"
-            app:destination="@id/errorFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailMovieFragment"
-        android:name="com.akaf.batmanapplication.DetailMovieFragment"
+        android:name="com.akaf.batmanapplication.ui.main.view.fragment.DetailMovieFragment"
         android:label="fragment_detail_movie"
-        tools:layout="@layout/fragment_detail_movie" >
-        <action
-            android:id="@+id/action_detailMovieFragment_to_errorFragment"
-            app:destination="@id/errorFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/errorFragment"
-        android:name="com.akaf.batmanapplication.ErrorFragment"
-        android:label="fragment_error"
-        tools:layout="@layout/fragment_error" />
+        tools:layout="@layout/fragment_detail_movie" />
 </navigation>

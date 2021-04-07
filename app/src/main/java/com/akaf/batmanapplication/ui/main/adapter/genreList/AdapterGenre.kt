@@ -3,7 +3,7 @@ package com.akaf.batmanapplication.ui.main.adapter.genreList
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.akaf.batmanapplication.App
+import com.akaf.batmanapplication.utils.application.App
 import com.akaf.batmanapplication.R
 import java.util.*
 
@@ -22,6 +22,7 @@ class AdapterGenre : RecyclerView.Adapter<ViewHolderGenre>() {
     override fun getItemCount(): Int = list.size
 
     fun updateList(genreList: List<String>) {
+        list.clear()
         list.addAll(genreList)
         notifyDataSetChanged()
     }

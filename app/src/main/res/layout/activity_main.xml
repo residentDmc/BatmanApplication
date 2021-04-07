@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layoutDirection="ltr"
-    tools:context=".ui.main.view.MainActivity"
+    tools:context=".ui.main.view.activity.MainActivity"
     tools:ignore="UnusedAttribute">
 
 

@@ -3,7 +3,7 @@ package com.akaf.batmanapplication.ui.main.adapter.ratingList
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.akaf.batmanapplication.App
+import com.akaf.batmanapplication.utils.application.App
 import com.akaf.batmanapplication.R
 import com.akaf.batmanapplication.data.model.moviedetail.Rating
 import java.util.*
@@ -21,6 +21,7 @@ class AdapterRating : RecyclerView.Adapter<ViewHolderRating>() {
     override fun getItemCount(): Int =list.size
 
     fun updateList(ratings: List<Rating>) {
+        list.clear()
         list.addAll(ratings)
         notifyDataSetChanged()
     }
